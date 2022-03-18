@@ -5,3 +5,11 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+2.times do |n|
+  post = Post.new(
+    title: "post#{n}",
+    body: "text___#{n}",
+  )
+
+  post.save!
+end

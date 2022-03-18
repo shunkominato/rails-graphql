@@ -13,5 +13,15 @@ module Types
     def test_field
       "Hello World!"
     end
+
+    field :post, Types::PostType, null: false do
+      description 'find a post by Id'
+      argument :id, ID, required: true
+    end
+
+    def post(id:)
+      # Post.find(id)
+      "Hell"
+    end
   end
 end
