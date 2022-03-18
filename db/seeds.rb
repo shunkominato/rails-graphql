@@ -11,5 +11,11 @@
     body: "text___#{n}",
   )
 
+  2.times do |m|
+    post.comments.build(
+      body: "text___#{m}",
+    )
+  end
+
   post.save!
 end

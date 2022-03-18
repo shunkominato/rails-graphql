@@ -15,13 +15,16 @@ module Types
     end
 
     field :post, Types::PostType, null: false do
-      description 'find a post by Id'
+      description 'Find a post by ID'
       argument :id, ID, required: true
     end
 
     def post(id:)
-      # Post.find(id)
-      "Hell"
+      p "--------------"
+        Rails.logger.debug(Post.find(id))
+      p "--------------"
+      Post.find(id)
+      # "Hell"
     end
   end
 end
