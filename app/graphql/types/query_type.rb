@@ -14,17 +14,6 @@ module Types
       "Hello World!"
     end
 
-    field :post, Types::PostType, null: false do
-      description 'Find a post by ID'
-      argument :id, ID, required: true
-    end
-
-    def post(id:)
-      p "--------------"
-        Rails.logger.debug(Post.find(id))
-      p "--------------"
-      Post.find(id)
-      # "Hell"
-    end
+    field :post, resolver: Resolver::PostResolver
   end
 end
